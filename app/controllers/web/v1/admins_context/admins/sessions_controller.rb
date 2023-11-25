@@ -2,8 +2,8 @@
 
 module Web
   module V1
-    module ManagersContext
-      module Managers
+    module AdminsContext
+      module Admins
         class SessionsController < BaseController
           include Authorized
         end
