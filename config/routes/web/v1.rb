@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       draw :clients_context
       draw :admins_context
       draw :managers_context
+
+      draw :feeds_context
     end
   end
 end

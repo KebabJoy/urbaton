@@ -16,6 +16,13 @@ module Urbaton
 
     config.middleware.use SnakeCaseParamsMiddleware
 
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '/*', headers: :any, methods: [:patch, :post, :get, :put]
+      end
+    end
+
     config.paths["config/routes.rb"] << Rails.root.join("config/routes/web/v1.rb")
 
     config.generators do |g|

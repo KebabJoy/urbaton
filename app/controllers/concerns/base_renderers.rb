@@ -14,7 +14,7 @@ module BaseRenderers
   end
 
   def render_unprocessable_entity(attrs = {})
-    render_error(:unprocessable_entity, prepare_error_payload(attrs))
+    render_error(:unprocessable_entity, attrs)
   end
 
 
@@ -26,7 +26,7 @@ module BaseRenderers
   end
 
   def render_not_found(attrs = {})
-    render_error(:not_found, prepare_error_payload(attrs))
+    render_error(:not_found, attrs)
   end
 
   def render_forbidden(code: :forbidden, message: "Forbidden")
@@ -38,14 +38,7 @@ module BaseRenderers
   end
 
   def render_error(status, attrs = {})
-    render json: UnprocessableEntityJbuilder.new.call(
-      camelize_keys: camelize_keys?,
-      # Content
-      errors: attrs.fetch(:errors, {}),
-      message: attrs[:message],
-      code: attrs.fetch(:code, status),
-      meta: attrs[:meta]
-    ), status: status
+    render json: attrs, status: status
   end
 
   def prepare_error_payload(attrs)

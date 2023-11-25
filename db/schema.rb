@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_25_141309) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_25_191700) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feeds", force: :cascade do |t|
+    t.text "title", null: false
+    t.text "body", null: false
+    t.string "status", default: "pending"
+    t.bigint "author_id", null: false
+    t.bigint "manager_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type", null: false
+    t.string "picture_url"
+    t.index ["author_id"], name: "index_feeds_on_author_id"
+    t.index ["manager_id"], name: "index_feeds_on_manager_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

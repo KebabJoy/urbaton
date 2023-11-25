@@ -16,6 +16,7 @@ gem "redis"
 gem "dry-matcher"
 gem "dry-transaction"
 gem "dry-validation"
+gem 'rack-cors'
 gem "dry-struct"
 gem "oj"
 gem 'rswag', "~> 2.9.0"

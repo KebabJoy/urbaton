@@ -23,7 +23,7 @@ module Authorized
     @current_member.setup_token
 
     unless @current_member.save
-      render_unprocessable_entity(@current_member)
+      render_unprocessable_entity(@current_member.errors)
     end
   end
 

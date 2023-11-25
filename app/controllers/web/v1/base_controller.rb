@@ -36,6 +36,10 @@ module Web
         render json: { success: false, message: 'Unauthorized' }, status: 403 unless current_member
       end
 
+      def not_found(message = "Not Found")
+        render json: { success: false, message: message }, status: :not_found
+      end
+
       def current_member
         @current_member ||= resource.find_by(auth_token: params[:auth_token])
       end
