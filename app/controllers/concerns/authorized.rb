@@ -30,7 +30,7 @@ module Authorized
   private
 
   def user_params
-    params.permit(:email, :first_name, :last_name, :password)
+    params.permit(:email, :first_name, :last_name, :password, :middle_name, :phone)
   end
 
   def update_params

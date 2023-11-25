@@ -25,12 +25,12 @@ gem "bootsnap", require: false
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "faker", require: false
+  gem "pry-rails"
   gem "factory_bot_rails"
 end
 
 group :development do
   gem "web-console"
-  gem "pry-rails"
 
   # gem "rack-mini-profiler"
   # gem "spring"

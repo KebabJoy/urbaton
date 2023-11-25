@@ -6,8 +6,10 @@ module Web
       class BaseController < Web::V1::BaseController
         include RoleAuthorized
 
-        def resource
-          Manager
+        def self.inherited(klass)
+          klass.define_method(:resource) do
+            Manager
+          end
         end
       end
     end

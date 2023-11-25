@@ -4,7 +4,7 @@ module Web
   module V1
     module ClientsContext
       module Clients
-        class SessionsController < BaseController
+        class SessionsController < ClientsContext::BaseController
           include Authorized
         end
       end

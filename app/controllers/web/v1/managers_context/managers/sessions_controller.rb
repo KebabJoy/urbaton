@@ -4,7 +4,7 @@ module Web
   module V1
     module ManagersContext
       module Managers
-        class SessionsController < BaseController
+        class SessionsController < ManagersContext::BaseController
           include Authorized
         end
       end

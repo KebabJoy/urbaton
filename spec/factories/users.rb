@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :user do
+  factory :client do
     sequence(:email) { |n| "new_email_#{n}@example.com" }
     first_name { Faker::Games::Minecraft.biome }
     last_name { Faker::Games::Minecraft.biome }

@@ -39,7 +39,7 @@ RSpec.configure do |config|
       servers: [
         {url: "http://localhost:3000/web/v1"}
       ],
-      schemas: Swagger.read_definitions("")
+      schemas: Swagger.read_definitions("web/v1")
     }
   }
 
