@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   namespace :web do
     namespace :v1, defaults: {format: :json} do
       draw :clients_context
+      draw :admins_context
+      draw :managers_context
     end
   end
 end

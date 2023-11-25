@@ -17,6 +17,14 @@ module Urbaton
     config.middleware.use SnakeCaseParamsMiddleware
 
     config.paths["config/routes.rb"] << Rails.root.join("config/routes/web/v1.rb")
+
+    config.generators do |g|
+      g.factory_bot dir: 'spec/factories'
+    end
+
+    config.generators do |g|
+      g.test_framework :rspec
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
